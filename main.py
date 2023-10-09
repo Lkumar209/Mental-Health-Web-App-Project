@@ -1,13 +1,17 @@
 import streamlit as st
 from sklearn.linear_model import LinearRegression
+
+
+
 from sklearn.model_selection import train_test_split
+
 from sklearn.metrics import mean_squared_error, r2_score
 from streamlit_option_menu import option_menu
 from streamlit_chat import message
 import openai
 from streamlit_tags import st_tags 
 
-#hi
+
 st.markdown(
     """
     <style>
@@ -96,8 +100,10 @@ elif selected_page == "CHatbot":
     
     if st.session_state['generated']:
         for i in range(len(st.session_state['generated'])):
+
             message(st.session_state['past'][i], is_user=True, key=str(i) + '_user')
             message(st.session_state['generated'][i], key=str(i))
+
             
 
 
